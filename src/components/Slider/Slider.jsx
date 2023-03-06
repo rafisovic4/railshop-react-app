@@ -22,20 +22,27 @@ const Slider = () => {
     <section className="banner">
       <SlideItem item={items[CurrentIndex]} />
       <div className="control">
+        {CurrentIndex <= 0 || (
           <button onClick={prevButton} className="prevButton">
             <img src={prevArrow} alt="prevButton" />
           </button>
-
+        )}
+        {CurrentIndex >= items.length - 1 || (
           <button onClick={nextButton} className="nextButton">
-          <img src={nextArrow} alt="nextButton" />
+            <img src={nextArrow} alt="nextButton" />
           </button>
-
+        )}
       </div>
       <div className="osnova__banner">
-          <div className="banner-information">
-              <h1 className="banner__title">ТОЛЬКО У НАС ЛИЦЕНЗИОННЫЕ КЛЮЧИ <br /> ПО <span className="page-span"> САМЫМ НИЗКИМ ЦЕНАМ!</span></h1>
-              <NavLink to="/catalog"><button className="banner-button">Купить</button></NavLink>
-          </div>
+        <div className="banner-information">
+          <h1 className="banner__title">
+            ТОЛЬКО У НАС ЛИЦЕНЗИОННЫЕ КЛЮЧИ <br /> ПО{" "}
+            <span className="page-span"> САМЫМ НИЗКИМ ЦЕНАМ!</span>
+          </h1>
+          <NavLink to="/catalog">
+            <button className="banner-button">Купить</button>
+          </NavLink>
+        </div>
       </div>
     </section>
   );
