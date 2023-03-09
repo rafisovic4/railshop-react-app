@@ -1,12 +1,24 @@
 import logotype from "../../assets/icons/logotype.png";
 import basketIcon from "../../assets/icons/basket_icon.svg";
 import profileIcon from "../../assets/icons/profile_icon.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { ModalContext } from "../../pages/Root";
 
 
 const Header = () => {
+
+    const {toggleModal} = useContext(ModalContext);
+
+    const location =  useLocation();
+    console.log(location);
+
+    const isHomePage = location.pathname === "/";
+
+    
+
     return (
-        <header>
+        <header className={isHomePage ? "" : "active"}>
             <div className="osnova__header">
                 <div className="logotype-header">
                     <NavLink to="/">
@@ -19,12 +31,10 @@ const Header = () => {
                     <NavLink to="/profile"><li className="li-menu-navigation">Профиль</li></NavLink>
                 </nav>
                 <div className="buttons-header">
-                    <button href="#" className="basket-button">
+                    <button onClick={toggleModal} className="basket-button">
                         <img src={basketIcon} alt={basketIcon} className="basket-button-image" />
                     </button>
-                    <button href="#" className="profile-button">
-                        <img src={profileIcon} alt={profileIcon} className="basket-button-image" />
-                    </button>
+                        <NavLink to="/profile"><button href="#" className="profile-button"><img src={profileIcon} alt={profileIcon} className="basket-button-image" /></button></NavLink>
                 </div>
             </div>
         </header>

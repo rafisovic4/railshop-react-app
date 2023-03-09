@@ -1,24 +1,26 @@
-const saleProduct = ({ saleproduct }) => {
-    console.log(saleproduct)
+import formatMoney from "../../utils/formatMoney";
+
+const saleProduct = ({ saleProducts }) => {
+    console.log(saleProducts)
   return (
     <>
       <div className="one-tovar">
         <div className="header-one__item">
-          <img
-            src={saleproduct.preview}
-            alt={saleproduct.name}
+           <img
+            src={saleProducts.preview}
+            alt={saleProducts.name}
             className="one-tovar__image"
-          />
-          <div className="sale_count">{saleproduct.sale}</div>
+          /> 
+          <div className="sale_count">SALE -{saleProducts.sale}</div>
         </div>
         <div className="footer-one__item">
-          <h2 className="one-tovar__title">{saleproduct.name}</h2>
+          <h2 className="one-tovar__title">{saleProducts.name}</h2>
           <div className="prices">
             <p className="one-tovar__price old_price">
-              {formatMoney(saleproduct.old_price)}
+              {formatMoney(saleProducts.old_price)}
             </p>
             <p className="one-tovar__price new_price">
-              {formatMoney(saleproduct.new_price)}
+              {formatMoney(saleProducts.new_price)}
             </p>
           </div>
 

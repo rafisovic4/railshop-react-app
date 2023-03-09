@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header/Header";
+import Modal from "../components/Modal/Modal";
 
 export const ModalContext = createContext(null);
 
@@ -12,6 +13,7 @@ const Root = () => {
     <ModalContext.Provider value={{ modal, toggleModal }}>
       <Header />
       <Outlet />
+      <Modal />
     </ModalContext.Provider>
   );
 };

@@ -5,6 +5,9 @@ import HomePage from "../pages/HomePage";
 import CatalogPage from "../pages/CatalogPage";
 import ProfilePage from "../pages/ProfilePage";
 
+
+
+
 const router = createBrowserRouter([
     {
         path: "/",
