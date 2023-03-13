@@ -4,6 +4,7 @@ import {createBrowserRouter} from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import CatalogPage from "../pages/CatalogPage";
 import ProfilePage from "../pages/ProfilePage";
+import SinglePage from "../pages/SinglePage";
 
 
 
@@ -24,7 +25,12 @@ const router = createBrowserRouter([
             {
                 path: "/profile",
                 element: <ProfilePage />,
+            }, 
+            {
+                path: "/tovar/:id",
+                element: <SinglePage />,
             }
+
         ]
     }
 ]);
